@@ -1,0 +1,654 @@
+html, body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    color: #999;
+    font-size: 16px;
+    background-color: #f6f6f6;
+    font-family: helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+
+/* common */
+
+.text-h1 {
+    color: #999 !important;
+}
+
+.text-h2 {
+    color: #aaa !important;
+}
+
+.text-h3 {
+    color: #bbb !important;
+}
+
+.text-h4 {
+    color: #ccc !important;
+}
+
+.flex-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-box>* {
+    flex-shrink: 100;
+}
+
+.flex-box>.flex-grow {
+    flex-grow: 1;
+}
+
+table.table-curved {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 0 1px #ddd;
+}
+
+table.table-transparent {
+    border: 0;
+}
+
+table.table-transparent thead tr th {
+    padding-left: 0;
+    padding-bottom: 10px;
+    letter-spacing: 0.05em;
+}
+
+table.table tr.transparent th, table.table tr.transparent td {
+    background: transparent;
+    border: 0;
+}
+
+hr {
+    display: block;
+    margin: 30px 0;
+    border-top: 2px solid #ddd;
+}
+
+hr.far {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+hr.short {
+    margin-right: 20%;
+    margin-left: 20%;
+}
+
+.btn-more, .btn-download {
+    display: block;
+    margin: 0;
+    width: 180px;
+}
+
+
+/* login */
+
+#login .login-container {
+    max-width: 600px;
+}
+
+#login .login-container .panel {
+    margin-bottom: 100px;
+    border: 0;
+    padding: 60px 100px 30px;
+}
+
+#login .login-container .panel .panel-head img.logo {
+    max-width: 80px;
+}
+
+#login .login-container .panel .panel-head h1 {
+    margin: 15px 0 10px;
+    font-size: 32px;
+}
+
+#login .login-container .panel .panel-body input {
+    text-align: center;
+}
+
+#login .login-container .panel .panel-body input[type=password] {
+    margin-top: 10px;
+}
+
+#login .login-container .panel .panel-body {
+    padding: 30px 0 10px;
+}
+
+#login .login-container .panel .panel-footer {
+    background: transparent;
+    border: 0;
+}
+
+#login .login-container .panel .panel-footer #btnLogin {
+    width: 80%;
+    line-height: 2em;
+}
+
+
+/* colmn layout */
+
+.sidebar-content {
+    display: block;
+}
+
+.sidebar {
+    /*  position: fixed;
+   top: 0;
+   left: 0; */
+    z-index: 1000;
+    height: 100%;
+    padding-top: 50px;
+    font-weight: bold;
+}
+
+.sidebar h2 {
+    margin: 0 0 20px;
+}
+
+.sidebar a.logo {
+    display: block;
+    max-width: 60px;
+    padding: 0;
+}
+
+.sidebar li.active, .sidebar li a {
+    padding: 18px 20px !important;
+}
+
+.sidebar li.active {
+    color: gray;
+    /* background: #dedede; */
+}
+
+.sidebar li a {
+    color: #999999;
+}
+
+.sidebar li a:hover {
+    background: #dedede !important;
+}
+
+.sidebar .badge {
+    float: right;
+    margin-right: -13px;
+    border: 1px solid #fff;
+}
+
+.sidebar-content {
+    display: inline-block;
+}
+
+.heading {
+    border-bottom: 1px solid #000;
+}
+
+
+/* main layout */
+
+.main-content {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    position: relative;
+    border-left: 1px solid #000;
+}
+
+.login-ID-container {
+    position: absolute;
+    top: 0;
+    text-align: right;
+    z-index: 200;
+    padding: 0;
+    margin: 0;
+}
+
+.login-ID {
+    padding: 5px 20px;
+    margin: 0;
+    border: 1px solid #999999;
+    display: inline-block;
+    z-index: 5;
+    margin-bottom: 20px;
+    background: #fff;
+}
+
+
+/* room page layout */
+
+.map-list {
+    padding: 0;
+    margin: 0;
+    margin-top: 40px;
+}
+
+.map-box-container {
+    height: 400px;
+    display: inline-block;
+}
+
+.map-box {
+    position: relative;
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+    height: 345px;
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+.map-box .room-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    width : 80px;
+    height: 80px;
+    background-color: #9E9E9E;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 5px solid #FAFAFA;
+    border-radius: 50%;
+}
+
+.map-box .leaflet-container {
+    cursor: auto;
+}
+
+.plus-box {
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 345px;
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+.plus-box img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 13%;
+    margin-bottom: 13%;
+    /*     border-top: 1px solid #000;
+border-left: 1px solid #000;
+border-right: 1px solid #000; */
+}
+
+.plus-box-footer {
+    text-align: center;
+    color: blue;
+    padding: 10px;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+.map-box-title {
+    padding: 0;
+    display: block;
+}
+
+.map-box-title span {
+    background: #000;
+    color: #fff;
+    padding: 5px 20px 3px 20px;
+}
+
+.map-box-footer {
+    padding: 0;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+.map-box-footer .right-footer {
+    float: right;
+    color: #ff0000;
+    padding: 10px;
+}
+
+.map-box-footer .left-footer {
+    float: left;
+    padding: 10px;
+    width: 100%;
+}
+
+.map-box-footer .left-footer a {
+    color: #999999;
+}
+
+
+/* new room page layout */
+
+.room-form-title {
+    float: left;
+    padding: 30px 0 0 30px;
+}
+
+.room-form {
+    margin-top: 30px;
+    padding: 80px 0 0 30px;
+}
+
+.upload-image {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+.upload-image img {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.submit-btn {
+    margin-top: 40px;
+    padding: 0;
+}
+
+.file-label {
+    float: left;
+    margin-right: 20px;
+}
+
+
+/* dashboard page */
+
+.squaredFour {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    float: left;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+    margin-top: 1px;
+}
+
+.squaredFour label {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.squaredFour label::after {
+    content: '';
+    width: 12px;
+    height: 6px;
+    position: absolute;
+    top: 5px;
+    left: 3px;
+    border: 3px solid #fff;
+    border-top: none;
+    border-right: none;
+    background: transparent;
+    opacity: 0;
+    transform: rotate(-45deg);
+}
+
+.squaredFour input[type=checkbox] {
+    visibility: hidden;
+}
+
+.squaredFour input[type=checkbox]::hover {
+    opacity: 0.5;
+}
+
+.squaredFour input[type=checkbox]:checked+label:after {
+    opacity: 1;
+}
+
+.red {
+    background: #F44336;
+}
+
+.pink {
+    background: #E91E63;
+}
+
+.purple {
+    background: #9C27B0;
+}
+
+.blue {
+    background: #2196F3;
+}
+
+.green {
+    background: #4CAF50;
+}
+
+.yellow {
+    background: #FFEB3B;
+}
+
+.orange {
+    background: #FF9800;
+}
+
+.brown {
+    background: #795548;
+}
+
+.checkbox-container .checkbox {
+    padding: 5px 0;
+}
+
+.datapicker-container {
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.datapicker-label {
+    padding: 10px 0;
+    font-size: 12px;
+}
+
+.datapicker-box {
+    padding: 0;
+    margin: 0;
+}
+
+.dashboard-map {
+    display: inline-block;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.dashboard-map img {
+    width: 100%;
+    height: 100vh;
+}
+
+.map-setting {
+    padding: 0;
+    background: #fff;
+    margin: 0;
+    top: 2%;
+    left: 2%;
+    padding: 10px;
+    position: absolute;
+    z-index: 20;
+}
+
+.graph-box {
+    padding: 10px;
+    width: 30%;
+    height: auto;
+}
+
+.graph-container {
+    margin-top: 10px;
+}
+
+.graph-list {
+    margin-bottom: 10px;
+}
+
+.user-box-title {
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.user-box-title span {
+    background: #000;
+    color: #fff;
+    padding: 5px 20px 3px 20px;
+}
+
+.graph-text {
+    font-size: 12px;
+}
+
+
+/* room detail page */
+
+.room-detail-right {
+    padding: 0;
+}
+
+.room-detail-left {
+    z-index: 300;
+    padding: 10px 0;
+    height: 100%;
+}
+
+.room-detail-left .room-name-box {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.room-detail-left .search-box {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.room-detail-left .fa-circle {
+    color: #ff0000;
+    font-size: 25px;
+}
+
+
+/* search box */
+
+#custom-search-input {
+    padding: 3px;
+    border: solid 1px #E4E4E4;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+#custom-search-input input {
+    border: 0;
+    box-shadow: none;
+}
+
+#custom-search-input button {
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666;
+    padding: 0 8px 0 10px;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input button:hover {
+    border: 0;
+    box-shadow: none;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input .glyphicon-search {
+    font-size: 23px;
+}
+
+.message-box {
+    position: absolute;
+    top: 0;
+    padding: 60px 0 0 0;
+    margin: 0;
+    height: 100%;
+}
+
+.message-list {
+    position: relative;
+    padding: 0 0 0 30px;
+    margin: 0;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.message-list li {
+    list-style: none;
+    padding: 5px 0;
+}
+
+.message-list li::before {
+    font-family: FontAwesome;
+    content: '\f1db';
+    font-size: 30px;
+    float: left;
+    padding-right: 5px;
+}
+
+.message-box .date {
+    font-size: 10px;
+    padding-left: 10px;
+}
+
+.message-box .title {
+    font-weight: bold;
+    padding: 5px;
+}
+
+.message-box .content, .message-box .location-content {
+    font-size: 11px;
+}
+
+.message-box .location-content {
+    padding-left: 30px;
+}
+
+.message-box .location-content .text-box {
+    border: 1px solid #000;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.message-box .location-content .location-desc::before {
+    font-family: FontAwesome;
+    content: '\f041';
+    float: left;
+    font-size: 25px;
+    padding-right: 10px;
+}
+
+.message-box .content img {
+    padding-left: 30px;
+    max-width: 350px;
+    height: 150px;
+}
+
+.message-box .message-list .highlight-message {
+    background-color: #FCE4EC;
+}
+
+.message-box .content .highlight-text {
+    color: #E91E63;
+}
